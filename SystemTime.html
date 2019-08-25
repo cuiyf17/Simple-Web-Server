@@ -1,0 +1,41 @@
+<html>
+ 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script language="javascript">
+    var t = null;
+    t = setTimeout(time, 0);//开始执行
+    function time() {
+        clearTimeout(t);//清除定时器
+        dt = new Date();
+        var y = dt.getYear() + 1900;
+        var mm = dt.getMonth() + 1;
+        var d = dt.getDate();
+        var day = dt.getDay();
+        var h = dt.getHours();
+        var m = dt.getMinutes();
+        var s = dt.getSeconds();
+        if (h < 10) { h = "0" + h; }
+        if (m < 10) { m = "0" + m; }
+        if (s < 10) { s = "0" + s; }
+        document.getElementById("timeShow").innerHTML = y + "年" + mm + "月" + d + "日" + " " + h + ": " + m + ": " + s + "";
+        t = setTimeout(time, 500); //设定定时器，循环执行           
+
+    }
+
+</script>
+
+<head>
+      <title>系统时间</title>
+      <style type="text/css"></style>
+</head>
+ 
+
+<body style="background-color:ivory">
+    <h1 style="background-color:rgba(137, 43, 226, 0.479); text-align:center">系统时间</h1>
+    <div id="timeShow" class="time1" style="text-align:center"></div>
+
+
+</body>
+
+</html>
